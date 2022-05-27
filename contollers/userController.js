@@ -10,7 +10,6 @@ const mongoose = require("mongoose"),
 
 
 module.exports = {
-
     create: async (req, res) => {
         const details = { fullName, phoneNum, email, password, address, role, adminCode } = req.body
         try {

@@ -10,6 +10,57 @@ const router = require("express").Router(),
 
 
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       required:
+ *         - fullName
+ *         - email
+ *         - password
+ *         - address
+ *         - phoneNum
+ *         - image
+ *         - role
+ *       properties:
+ *         fullName:
+ *           type: string
+ *         email:
+ *           type: string
+ *         password:
+ *           type: string
+ *         phoneNum:
+ *           type: number
+ *         image:
+ *           type: string
+ *         role:
+ *           type: string
+ *     Book:
+ *       type: object
+ *       required:
+ *         - title
+ *         - author
+ *         - ISBN
+ *         - status
+ *       properties:
+ *         title:
+ *           type: string
+ *         author:
+ *           type: string
+ *         ISBN:
+ *           type: Number
+ *         status:
+ *           type: string
+ *        
+ *         
+ *         
+ *     
+ */
+
+
+
 router.post("/signup", Users.create);
 
 router.post("/user-login", Users.user_login);

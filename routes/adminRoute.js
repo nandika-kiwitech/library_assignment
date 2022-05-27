@@ -11,7 +11,6 @@ const router = require("express").Router(),
  router.post("/admin-login", Admin.admin_login);
 
 
-
 router.post("/admin-login", Admin.admin_login);
 
 router.post("/book", middleware.authorized, middleware.authenticate, Admin.create_book);
