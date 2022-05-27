@@ -9,21 +9,8 @@ const userSchema = mongoose.Schema({
   phoneNum: { type: Number, required: true },
   address: { type: String, required: true },
   image: [{
-    fieldname: { type: String },
-    originalname: { type: String },
-    mimetype: { type: String },
-    path: { type: String }
+    type: String
   }],
-  // bookIssue: [{
-  //   bookInfo: {
-  //     bookId:
-  //     {type: mongoose.Schema.Types.ObjectId,
-  //     ref: "acitivity"},
-  //     record: {type: String},
-  //     issueDate: {default: Date.now()},
-  //     dueDate: { type: Date, default: Date.now() + 7 * 24 * 60 * 60 * 1000 }
-  //   }
-//}],
   role: { type: String, enum: ["user", "admin"] },
 })
 
