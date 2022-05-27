@@ -8,7 +8,6 @@ var upload = multer({
          cb(null, './uploads');
       },
       filename: function (req, file, cb) {
-         // var ext = path.extname(file.originalname)
          var originalname=file.originalname
             cb(null,originalname);      
       }
@@ -22,7 +21,6 @@ var upload = multer({
       if (mimetype && extname) {
          callback(null, true)
       } else {
-         console.log("upload only images")
          res.send("upload image only")
       }
    }

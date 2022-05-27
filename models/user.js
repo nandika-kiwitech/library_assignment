@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
-const { string, boolean } = require("joi");
+const { string, boolean, date } = require("joi");
 
 const userSchema = mongoose.Schema({
   fullName: { type: String, required: true },
@@ -8,21 +8,23 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: true },
   phoneNum: { type: Number, required: true },
   address: { type: String, required: true },
-  images: [{
+  image: [{
     fieldname: { type: String },
     originalname: { type: String },
     mimetype: { type: String },
     path: { type: String }
   }],
-
-  bookIssue: {
-    issueId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "acitivity"
-    }
-},
+  // bookIssue: [{
+  //   bookInfo: {
+  //     bookId:
+  //     {type: mongoose.Schema.Types.ObjectId,
+  //     ref: "acitivity"},
+  //     record: {type: String},
+  //     issueDate: {default: Date.now()},
+  //     dueDate: { type: Date, default: Date.now() + 7 * 24 * 60 * 60 * 1000 }
+  //   }
+//}],
   role: { type: String, enum: ["user", "admin"] },
-
 })
 
 userSchema.pre('save', async function (next) {
